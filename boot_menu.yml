@@ -1,0 +1,5 @@
+ublue_variants:
+  - label: avafloww/kinoite-nvidia-zfs
+    ks: /kickstart/ublue-os-nvidia.ks
+    flavors:
+      - label: kinoite
