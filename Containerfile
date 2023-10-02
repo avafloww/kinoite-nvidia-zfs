@@ -14,6 +14,10 @@ RUN rpm-ostree override remove \
 	fedora-repos-archive \
 	fedora-workstation-repositories
 
+# fixes discover app not launching
+# see: https://github.com/ublue-os/main/pull/282 & https://invent.kde.org/plasma/discover/-/issues/24
+RUN rpm-ostree override remove plasma-discover-rpm-ostree
+
 RUN rpm-ostree install \
 	https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-${FEDORA_MAJOR_VERSION}.noarch.rpm \
 	https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-${FEDORA_MAJOR_VERSION}.noarch.rpm
